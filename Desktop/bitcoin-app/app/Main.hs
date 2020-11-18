@@ -5,8 +5,8 @@ import Parse
 
 main :: IO ()
 main = do
-    let url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
+    let url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
     json <- download url
     case (parse json) of 
         Left err -> print err
-        Right feats -> print . head $ (features feats)
+        Right poke -> print . head $ (pokemon poke) 

@@ -1,4 +1,6 @@
 {-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
+
 
 module Parse where
 
@@ -7,24 +9,20 @@ import qualified Data.ByteString.Lazy.Char8 as L8
 import GHC.Generics ( Generic )
 import Data.Aeson.Types
 
--- list of features in each earthquake
-data Features = Features {
-           features :: [Properties]
-    } deriving (Show, Generic)
+data Pokeinfo = Pokeinfo {
+    id :: Int,
+    name :: String
+} deriving (Show, Generic)
 
-instance FromJSON Features
-instance ToJSON Features
+instance FromJSON Pokeinfo
+instance ToJSON Pokeinfo
 
--- array of properties of earthquake 
-data Properties = Properties {
-           mag :: Double,
-           place :: String
-    } deriving (Show, Generic)
+data Pokemon = Pokemon {
+    pokemon :: [Pokeinfo]
+} deriving (Show, Generic)
 
-instance FromJSON Properties
-instance ToJSON Properties
+instance FromJSON Pokemon
+instance ToJSON Pokemon
 
-parse :: L8.ByteString -> Either String Features
-parse json = eitherDecode json :: Either String Features 
-
-
+parse :: L8.ByteString -> Either String Pokemon
+parse json = eitherDecode json :: Either String Pokemon 
