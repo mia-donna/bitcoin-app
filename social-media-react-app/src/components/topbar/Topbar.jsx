@@ -1,6 +1,5 @@
 import "./topbar.css";
-import { Search, Person } from "@material-ui/icons";
-import PersonIcon from '@material-ui/icons/Person';
+import { Search, Person, Chat, Notifications } from "@material-ui/icons";
 
 export default function Topbar() {
     return (
@@ -22,6 +21,14 @@ export default function Topbar() {
                <div className="topbarIcons">
                  <div className="topbarIconItem">
                   <Person />
+                  <span className="topbarIconBage">1</span>
+                </div>
+                <div className="topbarIconItem">
+                  <Chat />
+                  <span className="topbarIconBage">2</span>
+                </div>
+                <div className="topbarIconItem">
+                  <Notifications />
                   <span className="topbarIconBage">1</span>
                 </div>
                </div>
