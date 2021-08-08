@@ -2,7 +2,7 @@ import "./rightbar.css";
 
 export default function Rightbar() {
     return (
-        <div classname="rightbar">
+        <div className="rightbar">
             <div className="rightbarWrapper">
                <div className="birthdayContainer">
                 <img src="assets/gift.png" alt="" className="birthdayImg"/>
